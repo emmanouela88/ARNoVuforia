@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d58c52ff9f122a49a289c83a1611436, type: 3}
+  m_Name: PrefabDb
+  m_EditorClassIdentifier: 
+  Entries:
+  - MeshId: marker
+    Prefab: {fileID: 1557681104471738, guid: 2cb306508c053344ea5fbc519cdcff79, type: 3}
+  - MeshId: mark
+    Prefab: {fileID: 1512981436160018, guid: 810c08d90875e4d2cab1a96f8a2edba4, type: 3}
+  - MeshId: mesh
+    Prefab: {fileID: 1512981436160018, guid: 810c08d90875e4d2cab1a96f8a2edba4, type: 3}
