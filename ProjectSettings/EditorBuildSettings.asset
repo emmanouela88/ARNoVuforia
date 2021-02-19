@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestAR.unity
     guid: e5fc66007af01a94da9e795b91f42d43
   - enabled: 0
@@ -33,6 +33,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/FollowPath.unity
     guid: 978f1414d62836a41b12039d47d32e23
+  - enabled: 0
+    path: Assets/Scenes/ArCoreTest.unity
+    guid: 72bb55fea4c960d4dbf2dee52de0c5f2
+  - enabled: 1
+    path: Assets/Scenes/GPSExample.unity
+    guid: 0662b413662582c4eabf1c70a21e3062
   m_configObjects:
     com.unity.xr.arcore.PlayerSettings: {fileID: 11400000, guid: 3a1ac4d7cbb0dca4d805563a4991fe52,
       type: 2}
