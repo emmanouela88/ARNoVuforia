@@ -19,3 +19,5 @@ MonoBehaviour:
     Prefab: {fileID: 1512981436160018, guid: 810c08d90875e4d2cab1a96f8a2edba4, type: 3}
   - MeshId: mesh
     Prefab: {fileID: 1512981436160018, guid: 810c08d90875e4d2cab1a96f8a2edba4, type: 3}
+  - MeshId: point
+    Prefab: {fileID: 1550249727436304, guid: 60a41cfc23d514878814f0d425912eff, type: 3}
