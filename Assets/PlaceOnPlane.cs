@@ -25,6 +25,9 @@ public class PlaceOnPlane : MonoBehaviour
 
         Touch touch = Input.GetTouch(0);
 
+        if (isPointerOverUIObjects(touch.position))
+            return;
+
         if (raycastManager.Raycast(touch.position, hits))
         {
             Pose pose = hits[0].pose;
