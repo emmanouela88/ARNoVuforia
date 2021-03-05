@@ -9,24 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/TestAR.unity
     guid: e5fc66007af01a94da9e795b91f42d43
   - enabled: 0
-    path: Assets/ARLocation/Experimental/World Builder/AR+GPS Location World Builder.unity
-    guid: 423d0c8b7cbc90442a84476074b7e313
-  - enabled: 0
-    path: Assets/ARLocation/Experimental/World Voxel Craft/AR+GPS Location World
-      Voxel.unity
-    guid: 1dda82d1016d23e459e52374ececdccf
-  - enabled: 0
-    path: Assets/ARLocation/Samples/ARLocation 3D Text.unity
-    guid: 5c043518199ea024ead87bc2f9450641
-  - enabled: 0
-    path: Assets/ARLocation/Samples/ARLocation Jet Fighter.unity
-    guid: 3d18decc3ae584bd1976e177bfee6eee
-  - enabled: 0
     path: Assets/Scenes/ARCoreScene.unity
     guid: 777d118af73c6c542aa888aa7ce406a6
-  - enabled: 0
-    path: Assets/Mapbox/Examples/0_PrefabScenes/Location-basedGame.unity
-    guid: 42f6aa7ce7a604f16ade319663f46ceb
   - enabled: 0
     path: Assets/Scenes/NewTestAR.unity
     guid: 29e2909bc87669247ba67975a361da16
@@ -36,10 +20,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ArCoreTest.unity
     guid: 72bb55fea4c960d4dbf2dee52de0c5f2
-  - enabled: 0
-    path: Assets/Scenes/GPSExample.unity
-    guid: 0662b413662582c4eabf1c70a21e3062
   m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 9333d89a1d813604f8a582858fee5092,
+      type: 2}
     com.unity.xr.arcore.PlayerSettings: {fileID: 11400000, guid: 3a1ac4d7cbb0dca4d805563a4991fe52,
       type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5afc2fee1e2f7d24599ed2c20a41315b,
