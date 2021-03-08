@@ -9,7 +9,7 @@ public class ShowCordinates : MonoBehaviour
     public Text longtitudeText;
     public Text latitudeText;
     public Text accuracyText;
-    /*IEnumerator Start()
+    IEnumerator Start()
     {
         Input.location.Start();
         int maxWait = 20;
@@ -37,14 +37,14 @@ public class ShowCordinates : MonoBehaviour
 
         // Stop service if there is no need to query location updates continuously
         Input.location.Stop();
-    }*/
-    private void Start()
+    }
+    /*private void Start()
     {
         if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
         {
             Permission.RequestUserPermission(Permission.FineLocation);
         }
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
