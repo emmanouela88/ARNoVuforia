@@ -1,56 +1,73 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEditor;
 using UnityEngine.Android;
+using ARLocation;
 
 public class ShowCordinates : MonoBehaviour
 {
-    public Text longtitudeText;
-    public Text latitudeText;
-    public Text accuracyText;
-    IEnumerator Start()
+    private double myLatValue;
+    private double myLngValue;
+    private double myAltValue;
+    public GameObject myPrefab;
+    private void Awake()
     {
-        Input.location.Start();
-        int maxWait = 20;
-        while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
+        var loc = new Location()
         {
-            yield return new WaitForSeconds(1);
-            maxWait--;
-        }
-        if (maxWait < 1)
-        {
-            print("Timed out");
-            yield break;
-        }
+            Latitude = myLatValue,
+            Longitude = myLngValue,
+            Altitude = myAltValue,
+            AltitudeMode = AltitudeMode.GroundRelative
 
-        if (Input.location.status == LocationServiceStatus.Failed)
-        {
-            print("Unable to determine device location");
-            yield break;
-        }
-        else
-        {
-            // Access granted and location value could be retrieved
-            print("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
-        }
+        };
 
-        // Stop service if there is no need to query location updates continuously
-        Input.location.Stop();
+        var opts = new PlaceAtLocation.PlaceAtOptions()
+        {
+            HideObjectUntilItIsPlaced = true,
+            MaxNumberOfLocationUpdates = 2,
+            MovementSmoothing = 0.1f,
+            UseMovingAverage = false
+        };
+        PlaceAtLocation.AddPlaceAtComponent(myPrefab, loc, opts);
     }
-    /*private void Start()
+
+    void Start()
     {
+#if UNITY_ANDROID
         if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
         {
             Permission.RequestUserPermission(Permission.FineLocation);
         }
-    }*/
+#elif UNITY_IOS
+                  PlayerSettings.iOS.locationUsageDescription = "Details to use location";
+#endif
+        StartCoroutine(StartLocationService());
+    }
 
-    // Update is called once per frame
+    private IEnumerator StartLocationService()
+    {
+        if (!Input.location.isEnabledByUser)
+        {
+            yield break;
+        }
+        Input.location.Start();
+        while (Input.location.status == LocationServiceStatus.Initializing)
+        {
+            yield return new WaitForSeconds(1);
+        }
+        if (Input.location.status == LocationServiceStatus.Failed)
+        {
+            Debug.Log("Unable to determine device location");
+            yield break;
+        }
+
+        Debug.Log("Latitude : " + Input.location.lastData.latitude);
+        Debug.Log("Longitude : " + Input.location.lastData.longitude);
+        Debug.Log("Altitude : " + Input.location.lastData.altitude);
+    }
     void Update()
     {
-        longtitudeText.text = "Longtitude: " + Input.location.lastData.longitude;
-        latitudeText.text = "Latitude: " + Input.location.lastData.latitude;
-        accuracyText.text = "Accuracy: " + Input.location.lastData.horizontalAccuracy;
+      
     }
 }
